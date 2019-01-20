@@ -246,7 +246,7 @@ MonoBehaviour:
   axes: 0
   sensivityHor: 9
   sensivityVert: 9
-  minimumVert: 45
+  minimumVert: -45
   maximumVert: 45
 --- !u!20 &282840813
 Camera:
