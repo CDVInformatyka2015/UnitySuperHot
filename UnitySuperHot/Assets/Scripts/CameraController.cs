@@ -45,8 +45,10 @@ public class CameraController : MonoBehaviour
         {
             _rotationX -= Input.GetAxis("Mouse Y") * sensivityVert;
             _rotationX = Mathf.Clamp(_rotationX, minimumVert, maximumVert);
+
             float delta = Input.GetAxis("Mouse X") * sensivityHor;
             float rotationY = transform.localEulerAngles.y + delta;
+
             transform.localEulerAngles = new Vector3(_rotationX, rotationY, 0);
         }
     }
