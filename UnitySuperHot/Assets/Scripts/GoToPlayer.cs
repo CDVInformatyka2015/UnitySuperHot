@@ -10,6 +10,7 @@ public class GoToPlayer : MonoBehaviour
     Transform _destination;
 
     NavMeshAgent _navMeshAgent;
+    bool _tru = false;
     
     void Start()
     {
@@ -25,12 +26,20 @@ public class GoToPlayer : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (_tru)
+        {
+            Vector3 targetVector = _destination.transform.position;
+            _navMeshAgent.SetDestination(targetVector);
+        }
+    }
+
     private void SetDestination()
     {
         if (_destination != null)
         {
-            Vector3 targetVector = _destination.transform.position;
-            _navMeshAgent.SetDestination(targetVector);
+            _tru = true;
         }
     }
 }
